@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pagrav Dance Company — Design Options</title>
+<meta name="description" content="Pagrav Dance Company — preview three design directions for the new website." />
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --ink: #000;
+    --muted: #6b6b6b;
+    --line: #d8d8d8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Archivo', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+
+  .topbar {
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .mark {
+    width: 36px; height: 36px;
+    background: var(--ink);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+  }
+  .brand {
+    line-height: 1.1;
+  }
+  .brand .name {
+    font-family: 'Anton', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+  .brand .sub {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  main {
+    flex: 1;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 96px 32px 64px;
+  }
+
+  .eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: currentColor;
+  }
+  h1 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: clamp(48px, 7.4vw, 112px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    margin-bottom: 18px;
+  }
+  .lede {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 560px;
+    margin-bottom: 64px;
+  }
+
+  .options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .option {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 36px 32px 32px;
+    min-height: 320px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s, box-shadow 0.3s;
+  }
+  .option:hover {
+    transform: translateY(-4px);
+    border-color: var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .option-num {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .option-title {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .option-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .option-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 5px;
+    align-self: flex-start;
+    transition: gap 0.3s;
+  }
+  .option:hover .option-cta { gap: 18px; }
+
+  footer {
+    padding: 24px 32px;
+    border-top: 1px solid var(--line);
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  
+  /* What we deliver — highlights */
+  .deliverables {
+    margin-top: 96px;
+    padding-top: 56px;
+    border-top: 1.5px solid var(--ink);
+  }
+  .deliverables-head {
+    margin-bottom: 40px;
+  }
+  .deliverables-eyebrow {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .deliverables-eyebrow::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: currentColor;
+  }
+  .deliverables h2 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+  }
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1.5px solid var(--ink);
+    border-left: 1.5px solid var(--ink);
+  }
+  .highlight {
+    border-right: 1.5px solid var(--ink);
+    border-bottom: 1.5px solid var(--ink);
+    padding: 36px 30px 32px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    transition: color 0.45s;
+  }
+  .highlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+  }
+  .highlight:hover::before { transform: translateY(0); }
+  .highlight:hover { color: #fff; }
+  .highlight:hover .h-num,
+  .highlight:hover .h-desc { color: rgba(255,255,255,0.78); }
+  .highlight > * { position: relative; z-index: 1; }
+  .h-num {
+    font-family: 'Archivo', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+    transition: color 0.45s;
+  }
+  .h-title {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .h-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    transition: color 0.45s;
+  }
+  @media (max-width: 900px) {
+    .highlights { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .highlights { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 900px) {
+    .options { grid-template-columns: 1fr; gap: 20px; }
+    main { padding: 56px 24px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="mark">P</span>
+  <span class="brand">
+    <div class="name">Pagrav</div>
+    <div class="sub">Dance Company</div>
+  </span>
+
+</header>
+
+<main>
+  <div class="eyebrow">For Pagrav Dance Company</div>
+  <h1>Choose<br/>a design</h1>
+  <p class="lede">Three directions for the new website. Open any one to see the full landing page, animations and interactions in motion.</p>
+
+  <div class="options">
+    <a class="option" href="pagrav-design-01.html">
+      <div class="option-num">Design 01</div>
+      <div class="option-title">Modernism</div>
+      <div class="option-desc">Clean lines, big headlines, structured grids. Easy to scan, quick to act.</div>
+      <span class="option-cta">View design <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+    </a>
+    <a class="option" href="pagrav-design-02.html">
+      <div class="option-num">Design 02</div>
+      <div class="option-title">Cinematic</div>
+      <div class="option-desc">Image-first, atmospheric, paced like a performance. Quieter and more theatrical.</div>
+      <span class="option-cta">View design <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+    </a>
+    <a class="option" href="pagrav-design-03.html">
+      <div class="option-num">Design 03</div>
+      <div class="option-title">Editorial</div>
+      <div class="option-desc">Big editorial typography, photography-led, magazine-style rhythm. Designed to feel curated.</div>
+      <span class="option-cta">View design <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg></span>
+    </a>
+  </div>
+  <section class="deliverables">
+    <div class="deliverables-head">
+      <div class="deliverables-eyebrow">What we deliver</div>
+      <h2>Built to<br/>bring people back.</h2>
+    </div>
+    <div class="highlights">
+      <div class="highlight">
+        <div class="h-num">01</div>
+        <div class="h-title">Clean UI</div>
+        <div class="h-desc">Editorial layout, restrained palette, photography-led. The work shines, the design steps back.</div>
+      </div>
+      <div class="highlight">
+        <div class="h-num">02</div>
+        <div class="h-title">User Engagement</div>
+        <div class="h-desc">Scroll animations and hover details that earn attention — never get in the way.</div>
+      </div>
+      <div class="highlight">
+        <div class="h-num">03</div>
+        <div class="h-title">User Retention</div>
+        <div class="h-desc">Live announcements, news, classes, newsletter. Reasons to come back, not just visit once.</div>
+      </div>
+      <div class="highlight">
+        <div class="h-num">04</div>
+        <div class="h-title">Conversion-Focused</div>
+        <div class="h-desc">Every section ends in a clear action — book, enquire, apply, donate. Nothing is decorative.</div>
+      </div>
+      <div class="highlight">
+        <div class="h-num">05</div>
+        <div class="h-title">Mobile First</div>
+        <div class="h-desc">Designed for phones first. Tested on real devices — works beautifully on any screen.</div>
+      </div>
+      <div class="highlight">
+        <div class="h-num">06</div>
+        <div class="h-title">Accessibility</div>
+        <div class="h-desc">Built for everyone. Keyboard, screen reader and reduced-motion friendly. WCAG 2.2 AA.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Pagrav Dance Company</footer>
+
+</body>
+</html>
